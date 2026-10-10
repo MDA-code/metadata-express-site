@@ -61,6 +61,11 @@
   // appears on this site.
   const ACCESS_KEY = "79ffad07-7e5d-47f5-923e-3be423cd53a9";
 
+  // Opened from inside the app? (?from=app&v=4.3)
+  const params = new URLSearchParams(location.search);
+  const version = (params.get("v") || "").replace(/[^0-9.]/g, "").slice(0, 12);
+  const sentFrom = params.get("from") === "app" ? "Metadata Express app " + version : "Website";
+
   const form = document.getElementById("suggest");
   const status = document.getElementById("status");
   const button = form.querySelector("button");
@@ -92,6 +97,7 @@
           phone: data.phone || "(not given)",
           role: data.role || "(not given)",
           suggestion: data.suggestion,
+          sent_from: sentFrom,
           botcheck: false,
         }),
       });
