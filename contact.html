@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Metadata Express</title>
+  <meta name="description" content="Get help with Metadata Express, ask about billing, or suggest a feature.">
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="index.html#pricing">Pricing</a><a class="btn primary small" href="index.html#download">Free trial</a></nav></div></header>
+
+<main class="legal">
+  <h1 id="heading">Contact us</h1>
+  <p class="updated" id="intro">Questions, problems, billing, or ideas: every message is read by the person who builds Metadata Express.</p>
+
+  <form id="contact" class="card form" novalidate>
+    <label>What's this about? <span class="req">*</span>
+      <select name="topic" required>
+        <option value="help">Help with the app</option>
+        <option value="suggestion">Feature suggestion</option>
+        <option value="billing">Billing or refund</option>
+        <option value="download">Download request</option>
+        <option value="other">Something else</option>
+      </select>
+    </label>
+
+    <label><span id="message-label">Your message</span> <span class="req">*</span>
+      <textarea name="message" rows="6" required maxlength="5000" placeholder="Tell us what's going on…"></textarea>
+    </label>
+
+    <label>How do you use Metadata Express?
+      <select name="role">
+        <option value="">Choose one (optional)</option>
+        <option>Sports photographer</option>
+        <option>Photo editor</option>
+        <option>Athletic department / team</option>
+        <option>Media outlet</option>
+        <option>Other</option>
+      </select>
+    </label>
+
+    <div class="two">
+      <label>Your name
+        <input name="name" type="text" autocomplete="name" maxlength="120" placeholder="Optional">
+      </label>
+      <label>Phone
+        <input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Optional">
+      </label>
+    </div>
+
+    <label>Your email <span class="req">*</span>
+      <input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="So we can reply">
+    </label>
+
+    <!-- Spam trap: people never see or fill this. -->
+    <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off">
+
+    <button class="btn primary" type="submit">Send</button>
+    <p id="status" class="form-status" role="status" aria-live="polite"></p>
+    <p class="fine">For billing or refunds, use the email you subscribed with. We use your email (and phone, if you give it) only to reply. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  </form>
+</main>
+
+<footer><div class="wrap"><div><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+
+<script>
+  // Web3Forms delivers each message by email. This key only lets the
+  // form send to the address it was created for; that address never
+  // appears on this site.
+  const ACCESS_KEY = "79ffad07-7e5d-47f5-923e-3be423cd53a9";
+
+  const TOPICS = {
+    help: { label: "Help with the app", heading: "Get help", prompt: "What's going on?", placeholder: "What were you doing, and what happened? Include your Mac model and macOS version if you can." },
+    suggestion: { label: "Feature suggestion", heading: "Suggest a feature", prompt: "Your suggestion", placeholder: "For example: let me filter photos by player in Cull mode…" },
+    billing: { label: "Billing or refund", heading: "Billing or refund", prompt: "Your message", placeholder: "Tell us what you need. For refunds, use the email you subscribed with." },
+    download: { label: "Download request", heading: "Get the download", prompt: "Anything we should know?", placeholder: "Optional: tell us a little about how you'll use Metadata Express." },
+    other: { label: "Something else", heading: "Contact us", prompt: "Your message", placeholder: "Tell us what's on your mind…" },
+  };
+
+  // ?topic=suggestion (website links) and ?from=app&v=4.3 (from the app)
+  const params = new URLSearchParams(location.search);
+  const version = (params.get("v") || "").replace(/[^0-9.]/g, "").slice(0, 12);
+  const sentFrom = params.get("from") === "app" ? "Metadata Express app " + version : "Website";
+
+  const form = document.getElementById("contact");
+  const status = document.getElementById("status");
+  const button = form.querySelector("button");
+  const heading = document.getElementById("heading");
+  const messageLabel = document.getElementById("message-label");
+
+  function showTopic() {
+    const topic = TOPICS[form.topic.value] || TOPICS.other;
+    messageLabel.textContent = topic.prompt;
+    form.message.placeholder = topic.placeholder;
+    form.message.required = form.topic.value !== "download";
+  }
+
+  if (TOPICS[params.get("topic")]) {
+    form.topic.value = params.get("topic");
+    heading.textContent = TOPICS[params.get("topic")].heading;
+    document.title = TOPICS[params.get("topic")].heading + " · Metadata Express";
+  }
+  showTopic();
+  form.topic.addEventListener("change", showTopic);
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    const topic = TOPICS[data.topic] || TOPICS.other;
+    if (form.message.required && !data.message.trim()) { status.textContent = "Please write your message."; return; }
+    if (!form.email.checkValidity()) { status.textContent = "Please enter a valid email so we can reply."; return; }
+    if (data.botcheck) return;
+
+    button.disabled = true;
+    status.textContent = "Sending…";
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: "Metadata Express: " + topic.label + (data.name ? " from " + data.name : ""),
+          from_name: "Metadata Express website",
+          topic: topic.label,
+          email: data.email,
+          name: data.name || "(not given)",
+          phone: data.phone || "(not given)",
+          role: data.role || "(not given)",
+          message: data.message || "(none)",
+          sent_from: sentFrom,
+          botcheck: false,
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message || "Something went wrong");
+      form.reset();
+      showTopic();
+      status.textContent = "Thanks! Your message was sent. We'll get back to you by email.";
+    } catch (error) {
+      status.textContent = "Sorry, that didn't send. Please check your connection and try again.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
