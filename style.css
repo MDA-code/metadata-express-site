@@ -160,3 +160,21 @@ footer a:hover { color: var(--accent); }
 .legal h2 { font-size: 22px; margin: 34px 0 8px; text-align: left; }
 .legal p, .legal li { color: var(--muted); font-size: 16.5px; }
 .legal .card { margin: 18px 0; }
+
+/* Forms */
+.form { display: grid; gap: 16px; padding: 28px; }
+.form label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; color: var(--text); }
+.form .req { color: var(--accent); }
+.form input, .form textarea, .form select {
+  font: inherit; font-weight: 400; color: var(--text); background: var(--bg-mid);
+  border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; width: 100%;
+}
+.form textarea { resize: vertical; min-height: 140px; }
+.form input:focus, .form textarea:focus, .form select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.form .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .form .two { grid-template-columns: 1fr; } }
+.form .btn { justify-self: start; cursor: pointer; }
+.form .btn:disabled { opacity: .55; cursor: default; transform: none; box-shadow: none; }
+.form-status { margin: 0; color: var(--accent); font-weight: 600; min-height: 1.2em; }
+.form .fine { margin: 0; font-size: 14px; color: var(--faint); }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
