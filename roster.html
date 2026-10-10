@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Make a Roster File · Metadata Express</title>
+  <meta name="description" content="Make a team roster file for Metadata Express in a few minutes: one line per athlete, a jersey number and the name. Works with TextEdit, Notepad, Excel and Numbers.">
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal pre { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px 18px; overflow-x: auto; font-size: 15px; line-height: 1.7; color: var(--text); }
+    .legal code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .legal p code, .legal li code, .legal td code { background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+    .legal table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 16px; }
+    .legal th, .legal td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--card-border); color: var(--muted); vertical-align: top; }
+    .legal th { color: var(--text); font-size: 14px; }
+    .legal ol li, .legal ul li { margin: 6px 0; }
+    .downloads { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 6px; }
+    .tip { border-left: 3px solid var(--accent); }
+  </style>
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#pricing">Pricing</a><a class="btn primary small" href="index.html#download">Free trial</a></nav></div></header>
+
+<main class="legal">
+  <h1>How to make a roster file</h1>
+  <p class="updated">About 10 minutes, once per team per season.</p>
+
+  <p>Your roster is what lets you type <code>23</code> and get <strong>Marcus Ellis</strong>. It's a plain text file with one person per line: a short <strong>code</strong> (usually the jersey number) and the <strong>name</strong>, exactly as you want it written into your photos.</p>
+
+  <div class="downloads">
+    <a class="btn primary" href="downloads/sample-roster-football.txt" download="Sample roster (football).txt">Download a football example</a>
+    <a class="btn" href="downloads/sample-roster-basketball.txt" download="Sample roster (basketball).txt">Download a basketball example</a>
+  </div>
+  <p class="fine" style="color: var(--faint); font-size: 14px;">Open an example, replace the names with your team's, and save. That's the quickest way to start.</p>
+
+  <h2>1. What the file looks like</h2>
+  <pre><code>Players:
+1o    Marcus Hale
+1d    Devin Brooks
+11o   Isaiah Coleman
+11d   Andre Whitfield Jr.
+88o   Chris Delgado III
+91s   Luis Ortega
+
+Coaches and staff:
+hc    Ray Simmons
+oc    Dana Whitlock
+ad    Karen Lopez</code></pre>
+  <ul>
+    <li><strong>One person per line:</strong> the code, then a Tab, space or comma, then the name.</li>
+    <li><strong>Headings and blank lines are ignored,</strong> so lines like <code>Players:</code> and <code>Coaches and staff:</code> are fine for keeping things organized.</li>
+    <li>Capital letters in codes don't matter: <code>HC</code> and <code>hc</code> are the same.</li>
+  </ul>
+
+  <h2>2. Choosing codes</h2>
+  <table>
+    <tr><th>Who</th><th>Code</th><th>Example</th></tr>
+    <tr><td>A player with a unique number</td><td>Just the number</td><td><code>23</code> Marcus Ellis</td></tr>
+    <tr><td>Two players who share a number (common in football)</td><td>Number plus <code>o</code> (offense), <code>d</code> (defense) or <code>s</code> (special teams)</td><td><code>11o</code> Isaiah Coleman<br><code>11d</code> Andre Whitfield Jr.</td></tr>
+    <tr><td>Coaches, staff, anyone without a number</td><td>Any short letters you'll remember</td><td><code>hc</code> head coach, <code>oc</code> offensive coordinator, <code>ad</code> athletic director</td></tr>
+  </table>
+  <p>Every code must be different. If two lines use the same code, the later one wins.</p>
+
+  <h2>3. Spell the names exactly right</h2>
+  <p>The name is written into every photo exactly as you type it here, so it should match how the athlete is listed wherever your photos go: <strong>the team's athlete-delivery or photo-sharing platform, the official roster, your newsroom style.</strong></p>
+  <ul>
+    <li>Include suffixes: <code>Jr.</code>, <code>III</code>.</li>
+    <li>Keep hyphens, apostrophes and accents: <code>Smith-Jones</code>, <code>O'Connor</code>, <code>José</code>.</li>
+    <li>Use the name the athlete actually goes by if that's how they're signed up, for example <code>DJ</code> rather than a full first name.</li>
+  </ul>
+  <div class="card tip"><p><strong>Why this matters:</strong> if your team sends photos to athletes automatically by name, a photo tagged "Andre Whitfield" won't reach someone signed up as "Andre Whitfield Jr." Copy the names straight from that platform's athlete list if you can.</p></div>
+
+  <h2>4. Three ways to make the file</h2>
+
+  <h3>On a Mac (TextEdit)</h3>
+  <ol>
+    <li>Open <strong>TextEdit</strong> and choose <strong>File › New</strong>.</li>
+    <li>Choose <strong>Format › Make Plain Text</strong> (important: rich text won't work).</li>
+    <li>Type or paste one person per line.</li>
+    <li><strong>File › Save</strong>, name it something like <code>Hawks Football 2026.txt</code>, and keep the encoding as <strong>Unicode (UTF-8)</strong>.</li>
+  </ol>
+
+  <h3>On Windows (Notepad)</h3>
+  <ol>
+    <li>Open <strong>Notepad</strong>, type or paste one person per line.</li>
+    <li><strong>File › Save As</strong>, choose <strong>UTF-8</strong> encoding, and save as a <code>.txt</code> file.</li>
+  </ol>
+
+  <h3>From a spreadsheet (Excel, Numbers, Google Sheets)</h3>
+  <ol>
+    <li>Put the codes in column A and the names in column B, with no other columns.</li>
+    <li>Either <strong>copy both columns and paste them into TextEdit or Notepad</strong> (they paste with Tabs, which is perfect),</li>
+    <li>or <strong>export it as CSV</strong> (<strong>File › Export To › CSV</strong> in Numbers; <strong>File › Save As › CSV UTF-8</strong> in Excel; <strong>File › Download › CSV</strong> in Google Sheets). Metadata Express opens <code>.csv</code> files too.</li>
+  </ol>
+
+  <h3>From the team's website (fastest)</h3>
+  <p>In Metadata Express, go to <strong>Session Setup › Roster › From Link…</strong> and paste the team's roster page from their athletics site (it usually ends in <code>/roster</code>; most college sites work). Metadata Express builds the file for you with numbers, names and offense/defense/special-teams codes. Check the names it lists before saving, and add your coaches and staff.</p>
+
+  <h2>5. Using it in the app</h2>
+  <ol>
+    <li>In <strong>Session Setup</strong>, click <strong>Load Roster</strong> and choose your file. Metadata Express remembers it for next time.</li>
+    <li>While tagging:
+      <ul>
+        <li>Type <code>23</code> and press Enter to add that player.</li>
+        <li>Type <code>11</code> when two players share it, and you'll get a quick choice; or type <code>11o</code> to skip the choice.</li>
+        <li>Type <code>hc</code> for the head coach, or any code you made.</li>
+        <li>Type two or more letters of a name, like <code>col</code>, for suggestions.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>Tips</h2>
+  <ul>
+    <li>Make one file per team per season, and update it when the roster changes (transfers, new numbers, walk-ons).</li>
+    <li>Add the people you photograph most even if they're not on the official roster: coaches, trainers, mascots, guests.</li>
+    <li>Questions? <a href="contact.html?topic=help">Send us a message</a>.</li>
+  </ul>
+</main>
+
+<footer><div class="wrap"><div><a href="roster.html">Roster guide</a><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+</body>
+</html>
