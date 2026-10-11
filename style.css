@@ -178,3 +178,9 @@ footer a:hover { color: var(--accent); }
 .form-status { margin: 0; color: var(--accent); font-weight: 600; min-height: 1.2em; }
 .form .fine { margin: 0; font-size: 14px; color: var(--faint); }
 .trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.download .install { text-align: left; margin: 22px auto 0; max-width: 520px; }
+.download .install h3 { margin: 0 0 6px; font-size: 17px; }
+.download .install ol { color: var(--muted); padding-left: 20px; margin: 0 0 8px; font-size: 15.5px; }
+.download .install li { margin: 6px 0; }
+.download .install p { color: var(--faint); font-size: 14px; margin: 0; }
