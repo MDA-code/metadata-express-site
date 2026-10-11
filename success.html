@@ -26,7 +26,11 @@
       <code id="key"></code>
       <button class="btn primary" id="copy" type="button">Copy</button>
     </div>
-    <p class="fine" style="color: var(--faint); font-size: 14px; margin: 6px 0 0;">Save it somewhere safe. It's also printed on your future invoices from Stripe. It works on up to 2 computers.</p>
+    <div class="keybox">
+      <a class="btn small" id="email-me" href="#">Email it to myself</a>
+      <a class="btn small" id="save-file" href="#" download="Metadata Express license key.txt">Save as file</a>
+    </div>
+    <p class="fine" style="color: var(--faint); font-size: 14px; margin: 6px 0 0;">Keep it somewhere safe: email it to yourself or save the file. It's also printed on your future invoices, and if you ever lose it, <a href="contact.html?topic=billing">contact us</a> and we'll send it again. It works on up to 2 computers.</p>
   </div>
 
   <div id="steps" hidden>
@@ -78,6 +82,18 @@
       $("title").textContent = "Thank you" + (result.name ? ", " + result.name.split(" ")[0] : "") + "!";
       $("subtitle").textContent = "Your Metadata Express " + (result.plan ? result.plan.toLowerCase() + " " : "") + "subscription is active" + (result.email ? ". A receipt is on its way to " + result.email + "." : ".");
       $("key").textContent = result.license_key;
+      const note = [
+        "Your Metadata Express license key:",
+        "",
+        result.license_key,
+        "",
+        "To activate: open Metadata Express, click the license line in the bottom-left of the Home screen (About & License), paste the key and click Activate.",
+        "It works on up to 2 computers. To move it, click Deactivate on the old computer first.",
+        "",
+        "Help: https://mda-code.github.io/metadata-express-site/contact.html",
+      ].join("\n");
+      $("email-me").href = "mailto:" + encodeURIComponent(result.email || "") + "?subject=" + encodeURIComponent("My Metadata Express license key") + "&body=" + encodeURIComponent(note);
+      $("save-file").href = URL.createObjectURL(new Blob([note + "\n"], { type: "text/plain" }));
       $("keycard").hidden = false;
       $("steps").hidden = false;
     } catch (error) {
