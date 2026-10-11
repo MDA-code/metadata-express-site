@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank you · Metadata Express</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .keybox { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 10px 0 4px; }
+    .keybox code { flex: 1 1 320px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 18px; letter-spacing: .02em; background: var(--accent-soft); color: var(--accent); border-radius: 12px; padding: 14px 16px; word-break: break-all; user-select: all; }
+    .legal ol li { margin: 8px 0; }
+  </style>
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="roster.html">Roster guide</a><a class="hide-sm" href="contact.html?topic=help">Help</a></nav></div></header>
+
+<main class="legal">
+  <h1 id="title">Thank you!</h1>
+  <p class="updated" id="subtitle">Getting your license key…</p>
+
+  <div class="card" id="keycard" hidden>
+    <p style="margin:0"><strong>Your license key</strong></p>
+    <div class="keybox">
+      <code id="key"></code>
+      <button class="btn primary" id="copy" type="button">Copy</button>
+    </div>
+    <p class="fine" style="color: var(--faint); font-size: 14px; margin: 6px 0 0;">Save it somewhere safe. It's also printed on your future invoices from Stripe. It works on up to 2 computers.</p>
+  </div>
+
+  <div id="steps" hidden>
+    <h2>Activate Metadata Express</h2>
+    <ol>
+      <li>Open <strong>Metadata Express</strong>. If you don't have it yet, <a href="contact.html?topic=download">request the download</a>.</li>
+      <li>On the Home screen, click the faint <strong>Free trial · … days left</strong> in the bottom-left corner (it opens <strong>About &amp; License</strong>).</li>
+      <li>Paste your key and click <strong>Activate</strong>.</li>
+    </ol>
+    <p>To use it on a second computer, do the same there. To move it to a new computer later, click <strong>Deactivate</strong> on the old one first.</p>
+    <p>New to Metadata Express? Start with the <a href="roster.html">roster guide</a>.</p>
+  </div>
+
+  <div class="card" id="problem" hidden>
+    <p id="problem-text" style="margin:0"></p>
+    <p style="margin:10px 0 0"><button class="btn" id="retry" type="button">Try again</button> &nbsp; or <a href="contact.html?topic=billing">contact us</a> and we'll send your key.</p>
+  </div>
+</main>
+
+<footer><div class="wrap"><div><a href="roster.html">Roster guide</a><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+
+<script>
+  const LICENSE_SERVER = "https://metadata-express-license.metadata-express-license.workers.dev";
+  const sessionId = new URLSearchParams(location.search).get("session_id") || "";
+
+  const $ = (id) => document.getElementById(id);
+
+  function problem(text) {
+    $("subtitle").textContent = "Your payment went through, but we couldn't show your key just yet.";
+    $("problem-text").textContent = text;
+    $("problem").hidden = false;
+  }
+
+  async function load(attempt = 1) {
+    $("problem").hidden = true;
+    if (!sessionId) {
+      problem("This page needs the link from your checkout. If you've already paid, contact us and we'll send your key.");
+      return;
+    }
+    try {
+      const response = await fetch(LICENSE_SERVER + "/claim?session_id=" + encodeURIComponent(sessionId));
+      const result = await response.json();
+      if (response.status === 409 && attempt < 6) {
+        // Stripe is still finishing the payment.
+        setTimeout(() => load(attempt + 1), 2500);
+        return;
+      }
+      if (!response.ok || !result.license_key) throw new Error(result.error || "Something went wrong.");
+      $("title").textContent = "Thank you" + (result.name ? ", " + result.name.split(" ")[0] : "") + "!";
+      $("subtitle").textContent = "Your Metadata Express " + (result.plan ? result.plan.toLowerCase() + " " : "") + "subscription is active" + (result.email ? ". A receipt is on its way to " + result.email + "." : ".");
+      $("key").textContent = result.license_key;
+      $("keycard").hidden = false;
+      $("steps").hidden = false;
+    } catch (error) {
+      problem(error.message || "Something went wrong.");
+    }
+  }
+
+  $("copy").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText($("key").textContent);
+      $("copy").textContent = "Copied ✓";
+    } catch {
+      const range = document.createRange(); range.selectNodeContents($("key"));
+      const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      $("copy").textContent = "Press ⌘C";
+    }
+  });
+
+  $("retry").addEventListener("click", () => load());
+
+  load();
+</script>
+</body>
+</html>
