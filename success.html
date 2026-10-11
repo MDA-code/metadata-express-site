@@ -95,6 +95,10 @@
       $("email-me").href = "mailto:" + encodeURIComponent(result.email || "") + "?subject=" + encodeURIComponent("My Metadata Express license key") + "&body=" + encodeURIComponent(note);
       $("save-file").href = URL.createObjectURL(new Blob([note + "\n"], { type: "text/plain" }));
       $("keycard").hidden = false;
+      if (window.mxTrack && !sessionStorage.getItem("mx-purchase-" + sessionId)) {
+        try { sessionStorage.setItem("mx-purchase-" + sessionId, "1"); } catch (e) {}
+        window.mxTrack("purchase_" + ((result.plan || "").toLowerCase() || "plan"));
+      }
       $("steps").hidden = false;
     } catch (error) {
       problem(error.message || "Something went wrong.");
@@ -116,5 +120,6 @@
 
   load();
 </script>
+<script src="analytics.js" defer></script>
 </body>
 </html>
