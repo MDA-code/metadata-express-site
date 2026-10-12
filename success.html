@@ -112,7 +112,7 @@
     } catch {
       const range = document.createRange(); range.selectNodeContents($("key"));
       const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
-      $("copy").textContent = "Press ⌘C";
+      $("copy").textContent = /Mac/.test(navigator.platform) ? "Press ⌘C" : "Press Ctrl+C";
     }
   });
 

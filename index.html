@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Metadata Express: tag and caption sports photos in seconds</title>
-  <meta name="description" content="Metadata Express is a Mac app for sports photographers: type a jersey number to tag athletes, get Getty-style captions, cull RAW files fast and send selects to Lightroom. 5-day free trial.">
+  <meta name="description" content="Metadata Express is a Mac and Windows app for sports photographers: type a jersey number to tag athletes, get Getty-style captions, cull RAW files fast and send selects to Lightroom. 5-day free trial.">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="style.css">
   <meta property="og:title" content="Metadata Express">
@@ -38,7 +38,7 @@
       <a class="btn primary" href="#download">Start your free 5-day trial</a>
       <a class="btn" href="#pricing">See pricing</a>
     </div>
-    <p class="note">Mac app · Your photos never leave your computer · Cancel anytime</p>
+    <p class="note">Mac &amp; Windows · Your photos never leave your computer · Cancel anytime</p>
     <div class="shot"><img src="images/tagging.png" alt="Metadata Express tagging screen: a player tagged by jersey number, with the session details and an automatic Getty-style caption" width="1500" height="900"></div>
   </div>
 </section>
@@ -50,7 +50,7 @@
     <div class="grid">
       <div class="card"><div class="icon">#</div><h3>Tag by jersey number</h3><p>Type <kbd>8</kbd> and press Enter. Your roster turns numbers, positions and short codes into exact names, so they match the athletes' accounts every time. Tagged names turn green.</p></div>
       <div class="card"><div class="icon">✎</div><h3>Getty-style captions</h3><p>"Player of the Team during the A vs. B game at Stadium on Date. (Photo by You)". Written for you, or add your own sentence in one keystroke.</p></div>
-      <div class="card"><div class="icon">✦</div><h3>AI Suggest</h3><p>Reads jersey numbers and learns faces while you tag, then offers the names. It runs on your Mac, not in the cloud. Optional.</p></div>
+      <div class="card"><div class="icon">✦</div><h3>AI Suggest</h3><p>Reads jersey numbers and learns faces while you tag, then offers the names. It runs on your computer, not in the cloud. Optional.</p></div>
       <div class="card"><div class="icon">▦</div><h3>Fast culling</h3><p>Open a card's worth of Sony, Canon, Nikon or Fujifilm RAW (or JPEG) files. See the stars you gave them on the camera, tag and color-label with one key, then caption your picks and send them to Lightroom.</p></div>
       <div class="card"><div class="icon">⎙</div><h3>Score sheet captions</h3><p>Add the official stats PDF and get caption ideas from the actual plays, like "catches a 41-yard pass".</p></div>
       <div class="card"><div class="icon">⏱</div><h3>Track your speed</h3><p>See your seconds per photo, your average and your personal best, then try to beat it. Plus your top 10 most-photographed players, so nobody gets missed.</p></div>
@@ -149,10 +149,13 @@
     <h2>Try Metadata Express free</h2>
     <p class="sub">Download, open and start tagging. The 5-day trial includes every feature.</p>
     <div class="card">
-      <a class="btn primary" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express.dmg">Download for Mac</a>
-      <p class="reqs">Free for 5 days, no card needed. About 340 MB.</p>
+      <div class="downloads">
+        <a class="btn primary" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express.dmg">Download for Mac</a>
+        <a class="btn primary" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express-Setup.exe">Download for Windows</a>
+      </div>
+      <p class="reqs">Free for 5 days, no card needed. About 340 MB (Mac) or 165 MB (Windows).</p>
       <div class="install">
-        <h3>Installing</h3>
+        <h3>Installing on a Mac</h3>
         <ol>
           <li>Open the downloaded <strong>Metadata-Express.dmg</strong> and drag <strong>Metadata Express</strong> into <strong>Applications</strong>.</li>
           <li>Open Metadata Express from Applications. The first time, macOS says it can't verify the app: click <strong>Done</strong> (not Move to Trash).</li>
@@ -160,7 +163,17 @@
         </ol>
         <p>You only do this once; after that it opens like any other app and updates itself.</p>
       </div>
-      <p class="reqs"><strong>Requirements:</strong> a Mac with Apple silicon (M1 or newer) running macOS 13 Ventura or later. AI Suggest needs 16 GB of memory and a one-time ~6 GB download. Windows version coming soon.</p>
+      <div class="install">
+        <h3>Installing on Windows</h3>
+        <ol>
+          <li>Open the downloaded <strong>Metadata-Express-Setup.exe</strong>.</li>
+          <li>If Windows says <strong>"Windows protected your PC"</strong>, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          <li>Follow the installer. No administrator password is needed, and Metadata Express is added to the Start menu.</li>
+        </ol>
+        <p>You only do this once; after that it updates itself.</p>
+      </div>
+      <p class="reqs"><strong>Mac:</strong> Apple silicon (M1 or newer), macOS 13 Ventura or later. AI Suggest needs 16 GB of memory and a one-time ~6 GB download.</p>
+      <p class="reqs"><strong>Windows:</strong> 64-bit Windows 10 or 11. AI Suggest needs 16 GB of memory, an NVIDIA graphics card with 8 GB of video memory, and a one-time ~6 GB download.</p>
     </div>
   </div>
 </section>
@@ -176,7 +189,7 @@
       <details><summary>Does it work without internet?</summary><p>Yes. It needs a connection once every 7 days to confirm your subscription, and once to download AI Suggest if you turn it on.</p></details>
       <details><summary>Can I use it on my laptop and my desktop?</summary><p>Yes. Each subscription works on 2 computers. You can move it to a new computer anytime from About &amp; License &gt; Deactivate.</p></details>
       <details><summary>How do I cancel or change my plan?</summary><p>Open <a href="https://billing.stripe.com/p/login/eVq6oAd263c73NAaw1bV600">Manage subscription</a> (or <strong>About &amp; License › Manage Subscription</strong> in the app) and sign in with the email you subscribed with. You can switch between monthly and yearly, update your card, or cancel. If you cancel, you keep using Metadata Express until the end of the period you paid for and won't be charged again. See our <a href="refunds.html">refund policy</a>.</p></details>
-      <details><summary>Is there a Windows version?</summary><p>It's coming. <a href="contact.html?topic=other">Send us a message</a> to hear when it's ready.</p></details>
+      <details><summary>Is there a Windows version?</summary><p>Yes. <a href="#download">Download for Windows</a> above. Your subscription's 2 computers can be any mix of Mac and Windows.</p></details>
       <details><summary>Can I suggest a feature?</summary><p>Please do. <a href="contact.html?topic=suggestion">Send a suggestion</a>; every one is read by the person who builds Metadata Express.</p></details>
       <details><summary>How do I get help?</summary><p>Send us a message through the <a href="contact.html?topic=help">contact form</a> and we'll reply by email.</p></details>
     </div>
