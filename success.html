@@ -90,7 +90,7 @@
         "To activate: open Metadata Express, click the license line in the bottom-left of the Home screen (About & License), paste the key and click Activate.",
         "It works on up to 2 computers. To move it, click Deactivate on the old computer first.",
         "",
-        "Help: https://mda-code.github.io/metadata-express-site/contact.html",
+        "Help: https://metadataexpress.com/contact.html",
       ].join("\n");
       $("email-me").href = "mailto:" + encodeURIComponent(result.email || "") + "?subject=" + encodeURIComponent("My Metadata Express license key") + "&body=" + encodeURIComponent(note);
       $("save-file").href = URL.createObjectURL(new Blob([note + "\n"], { type: "text/plain" }));
