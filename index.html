@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Metadata Express: tag and caption sports photos in seconds</title>
-  <meta name="description" content="Metadata Express is a Mac and Windows app for sports photographers: type a jersey number to tag athletes, get Getty-style captions, cull RAW files fast and send selects to Lightroom. 5-day free trial.">
+  <meta name="description" content="Metadata Express is a Mac and Windows app for sports photographers: ingest from SD cards, cull RAW files fast, type a jersey number to tag athletes, get Getty-style captions and send photos to editors or Lightroom. 5-day free trial.">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="style.css">
   <meta property="og:title" content="Metadata Express">
@@ -33,7 +33,7 @@
   <div class="wrap">
     <span class="eyebrow">Built for sports photographers</span>
     <h1>Sports photos, <span>tagged and captioned</span> in seconds.</h1>
-    <p class="lead">Type a jersey number and Metadata Express fills in the athlete's name. It writes the keywords and a Getty-style caption straight into every photo, culls RAW files fast, and sends your selects to Lightroom.</p>
+    <p class="lead">Ingest straight from your SD card, cull fast, then type a jersey number and Metadata Express fills in the athlete's name. It writes the keywords and a Getty-style caption into every photo and sends them to your editors or Lightroom.</p>
     <div class="ctas">
       <a class="btn primary" href="#download">Start your free 5-day trial</a>
       <a class="btn" href="#pricing">See pricing</a>
@@ -51,16 +51,18 @@
       <div class="card"><div class="icon">#</div><h3>Tag by jersey number</h3><p>Type <kbd>8</kbd> and press Enter. Your roster turns numbers, positions and short codes into exact names, so they match the athletes' accounts every time. Tagged names turn green.</p></div>
       <div class="card"><div class="icon">✎</div><h3>Getty-style captions</h3><p>"Player of the Team during the A vs. B game at Stadium on Date. (Photo by You)". Written for you, or add your own sentence in one keystroke.</p></div>
       <div class="card"><div class="icon">✦</div><h3>AI Suggest</h3><p>Reads jersey numbers and learns faces while you tag, then offers the names. It runs on your computer, not in the cloud. Optional.</p></div>
-      <div class="card"><div class="icon">▦</div><h3>Fast culling</h3><p>Open a card's worth of Sony, Canon, Nikon or Fujifilm RAW (or JPEG) files. See the stars you gave them on the camera, tag and color-label with one key, then caption your picks and send them to Lightroom.</p></div>
+      <div class="card"><div class="icon">💾</div><h3>Ingest from the card</h3><p>Plug in an SD card and choose to ingest it or look through it first. Name folders and files with variables like {date}_{event}_{seq}, make a backup copy, add your IPTC template, or take just the photos you locked on the camera. Only new photos are copied.</p></div>
+      <div class="card"><div class="icon">▦</div><h3>Fast culling</h3><p>Sony, Canon, Nikon and Fujifilm RAW (or JPEG). See the stars you gave them on the camera, tag and color-label with one key, keep favorite folders in the sidebar, then caption your picks and send them to Lightroom.</p></div>
+      <div class="card"><div class="icon">⇪</div><h3>Send to editors</h3><p>Deliver photos to Dropbox, Google Drive, Box, OneDrive or an FTP / SFTP server in the background while you keep shooting, or automatically the moment a card is ingested. Captions and tags travel with them.</p></div>
       <div class="card"><div class="icon">⎙</div><h3>Score sheet captions</h3><p>Add the official stats PDF and get caption ideas from the actual plays, like "catches a 41-yard pass".</p></div>
       <div class="card"><div class="icon">⏱</div><h3>Track your speed</h3><p>See your seconds per photo, your average and your personal best, then try to beat it. Plus your top 10 most-photographed players, so nobody gets missed.</p></div>
       <div class="card"><div class="icon">↺</div><h3>Fix mistakes anytime</h3><p>Go back, change a tag and save. The photo's file is rewritten, and its caption follows the new name.</p></div>
-      <div class="card"><div class="icon">⇣</div><h3>Roster from a link</h3><p>Paste a team's roster page and get a ready-to-use roster, keeping your own spellings.</p></div>
+      <div class="card"><div class="icon">⇣</div><h3>Rosters in minutes</h3><p>Paste a team's roster page (college sites, ESPN, NFL, NBA, NHL, MLB, MLS) or build one right in the app, even offline. Your own spellings are always kept.</p></div>
       <div class="card"><div class="icon">⛨</div><h3>Private and offline</h3><p>Everything runs on your computer and works without internet. Standard IPTC and XMP metadata that Lightroom, wire services and most photo platforms read.</p></div>
       <div class="card"><div class="icon">☰</div><h3>Full IPTC templates</h3><p>Byline, credit, copyright, usage terms, city, venue, headline, job ID, categories and more. Save templates by client or team; they're written to every photo you tag, or to a whole folder at once.</p></div>
       <div class="card"><div class="icon">✓</div><h3>Keeps your metadata</h3><p>Only the fields you change are written. Your existing byline, location, instructions, ratings and camera data stay exactly as they were.</p></div>
       <div class="card"><div class="icon">⇄</div><h3>Tag both teams</h3><p>Load the opponent's roster too. Numbers bring up players from both sides, and each caption names the right team.</p></div>
-      <div class="card"><div class="icon">Aa</div><h3>Rename by player</h3><p>Turn it on and every photo you save is renamed after its players: KJDuffJr1, KJDuffJr2… Pick FirstLast, Last_First or LAST style; numbering carries on across games.</p></div>
+      <div class="card"><div class="icon">Aa</div><h3>Rename by player</h3><p>Turn it on and every photo you save is renamed after its players: KJDuffJr1, KJDuffJr2… Pick LastFirst, Last_First, Last, FirstLast or First_Last; numbering carries on across games.</p></div>
     </div>
   </div>
 </section>
@@ -81,12 +83,13 @@
     </div>
     <div class="row flip">
       <div class="text">
-        <h3>Cull at game speed</h3>
-        <p>Thumbnails appear straight from your RAW files. Tag with <kbd>T</kbd>, color-label with <kbd>1</kbd>–<kbd>5</kbd>, and filter by the stars you set on the camera. Labels are saved in standard sidecar files that other photo software reads too.</p>
+        <h3>Ingest and cull at game speed</h3>
+        <p>Plug in a card and Metadata Express asks what to do: ingest it, or open it to pick the shots first. Thumbnails appear straight from your RAW files. Tag with <kbd>T</kbd>, color-label with <kbd>1</kbd>–<kbd>5</kbd>, and filter by the stars or locks you set on the camera.</p>
         <ul>
+          <li>Auto Ingest: plug in the card and your locked selects are copied, backed up and sent to your editors with no clicks</li>
           <li><kbd>I</kbd> Metadata Selects: name and caption your picks right away; Lightroom gets them on import</li>
-          <li><kbd>⌘Y</kbd> Copy or move picks to any folder, then import into Lightroom in place</li>
-          <li>Click to zoom and check focus, batch rename with undo</li>
+          <li>Send to Dropbox, Google Drive, Box, OneDrive or FTP while you keep working</li>
+          <li><kbd>⌘Y</kbd> copy or move, rename with variables and undo, click to zoom and check focus</li>
         </ul>
       </div>
       <img src="images/cull.png" alt="Cull mode showing a grid of photos with color labels and tags" loading="lazy" width="1500" height="900">
@@ -189,10 +192,11 @@
     <div class="faq">
       <details><summary>Does it use AI?</summary><p>Only if you want it to. Tagging, captions, culling and Lightroom transfer use no AI: you type a number and it looks the name up in your own roster. AI Suggest is optional, off by default, and runs only on your computer. If your clients require no AI at all, download the <a href="#download">No AI version</a>: it doesn't include any AI software, and it updates only to No AI versions.</p></details>
       <details><summary>Do my photos get uploaded anywhere?</summary><p>No. Metadata Express works on the photos on your computer and writes the metadata into the files themselves. Your photos, rosters and captions never leave your computer.</p></details>
-      <details><summary>How do I make a roster?</summary><p>It's a simple text file: one line per athlete with their jersey number and name. Follow our <a href="roster.html">step-by-step roster guide</a> (with examples to download), or let Metadata Express build one from the team's roster page.</p></details>
+      <details><summary>How do I make a roster?</summary><p>It's a simple text file: one line per athlete with their jersey number and name. Follow our <a href="roster.html">step-by-step roster guide</a> (with examples to download), build one in the app (click the <strong>i</strong> next to Roster in Session Setup), or let Metadata Express make one from the team's roster page.</p></details>
+      <details><summary>Can it send photos to my editors or social team?</summary><p>Yes. Click <strong>Send…</strong> in Ingest / Cull and add a destination: your Dropbox, Google Drive, Box or OneDrive folder (found automatically; their app uploads it), or an FTP / SFTP server from your outlet or team. Photos go in the background, JPEGs only if you like, and can go automatically right after you ingest a card. Passwords are kept in your computer's keychain.</p></details>
       <details><summary>Which files does it work with?</summary><p>Tagging and captions work with JPEG files. Cull mode opens JPEG and RAW files from Sony, Canon, Nikon and Fujifilm cameras (.ARW, .CR3, .CR2, .NEF, .RAF).</p></details>
       <details><summary>Will it work with the platform my team uses?</summary><p>Metadata Express writes standard IPTC and XMP keywords and captions, the same fields Lightroom, wire services and most photo-sharing and athlete-delivery platforms read.</p></details>
-      <details><summary>Can it rename my files with player names?</summary><p>Yes. In Session Setup, tick <strong>Rename photos with player names when saving</strong> and choose a style: KJDuffJr1, DuffJr_KJ_1, DUFFJR_1 or KJ_DuffJr_1. Photos with several players get every name (KJDuffJr_JesseOfurie1), numbers continue from what's already in the folder so nothing is overwritten, and the tags and captions are still written as usual.</p></details>
+      <details><summary>Can it rename my files with player names?</summary><p>Yes. In Session Setup, tick <strong>Rename photos with player names when saving</strong> and choose a style: DuffJrKJ1, DuffJr_KJ_1, DUFFJR_1, KJDuffJr1 or KJ_DuffJr_1. Photos with several players get every name (KJDuffJr_JesseOfurie1), numbers continue from what's already in the folder so nothing is overwritten, and the tags and captions are still written as usual.</p></details>
       <details><summary>Will it overwrite the IPTC template I already use?</summary><p>No. Metadata Express only writes the caption, keywords, the people shown and the template fields you fill in. Everything else already in your photos (byline, location, instructions, ratings, camera data) is kept. You can also build your full template right in the app.</p></details>
       <details><summary>Does it work without internet?</summary><p>Yes. It needs a connection once every 7 days to confirm your subscription, and once to download AI Suggest if you turn it on.</p></details>
       <details><summary>Can I use it on my laptop and my desktop?</summary><p>Yes. Each subscription works on 2 computers. You can move it to a new computer anytime from About &amp; License &gt; Deactivate.</p></details>
