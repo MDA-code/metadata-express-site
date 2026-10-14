@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /success.html
+
+Sitemap: https://metadataexpress.com/sitemap.xml
