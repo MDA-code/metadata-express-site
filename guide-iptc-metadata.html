@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPTC metadata for sports photographers: what each field means · Metadata Express</title>
+  <meta name="description" content="Byline, credit, source, copyright, headline, job ID, location and more: what each IPTC field is for, what wire services expect, and how to fill them in once with a template.">
+  <link rel="icon" href="images/icon.png">
+  <link rel="canonical" href="https://metadataexpress.com/guide-iptc-metadata.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Metadata Express">
+  <meta property="og:url" content="https://metadataexpress.com/guide-iptc-metadata.html">
+  <meta property="og:title" content="IPTC metadata for sports photographers: what each field means">
+  <meta property="og:description" content="Byline, credit, source, copyright, headline, job ID, location and more: what each IPTC field is for, what wire services expect, and how to fill them in once with a template.">
+  <meta property="og:image" content="https://metadataexpress.com/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://metadataexpress.com/images/og.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal pre { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px 18px; overflow-x: auto; font-size: 15px; line-height: 1.7; color: var(--text); }
+    .legal code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .legal p code, .legal li code, .legal td code { background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+    .legal table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 16px; }
+    .legal th, .legal td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--card-border); color: var(--muted); vertical-align: top; }
+    .legal th { color: var(--text); font-size: 14px; }
+    .legal ol li, .legal ul li { margin: 6px 0; }
+    .downloads { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 6px; }
+    .tip { border-left: 3px solid var(--accent); }
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "IPTC metadata for sports photographers: what each field means", "description": "Byline, credit, source, copyright, headline, job ID, location and more: what each IPTC field is for, what wire services expect, and how to fill them in once with a template.", "url": "https://metadataexpress.com/guide-iptc-metadata.html", "image": "https://metadataexpress.com/images/og.png", "author": {"@type": "Organization", "name": "Metadata Express"}, "publisher": {"@type": "Organization", "name": "Metadata Express", "logo": {"@type": "ImageObject", "url": "https://metadataexpress.com/images/icon.png"}}, "datePublished": "2026-10-14"}</script>
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#download">Downloads</a><a class="hide-sm" href="index.html#pricing">Pricing</a><a class="btn primary small" href="index.html#download">Free trial</a></nav></div></header>
+
+<main class="legal">
+  <p class="updated"><a href="guides.html">Guides</a></p>
+  <h1>IPTC metadata for sports photographers: what each field means</h1>
+  <p class="updated">A 5-minute read.</p>
+
+<p>IPTC metadata is the information stored inside a photo file: who shot it, who owns it, where it was taken and what's in it. Editors, wire services, agencies and photo platforms read it automatically, so filling it in correctly is what gets your photos credited, found and delivered to the right people.</p>
+<p>It lives in two standard places inside each file (the older IPTC block and the newer XMP), and good software keeps them in step. Nothing here is specific to one program: any photo software that follows the IPTC standard reads the same fields.</p>
+
+<h2>Who made it, and who owns it</h2>
+<table>
+  <tr><th>Field</th><th>What it's for</th><th>Example</th></tr>
+  <tr><td>Creator (Byline)</td><td>The photographer's name</td><td>Jane Shooter</td></tr>
+  <tr><td>Byline Title</td><td>Their role</td><td>Staff Photographer</td></tr>
+  <tr><td>Credit Line</td><td>How the photo should be credited when published</td><td>Riverside Hawks Athletics</td></tr>
+  <tr><td>Source</td><td>Who supplied the photo (agency, team, outlet)</td><td>Riverside Hawks</td></tr>
+  <tr><td>Copyright Notice</td><td>Who owns it</td><td>© 2026 Jane Shooter</td></tr>
+  <tr><td>Rights Usage Terms</td><td>How it may be used</td><td>Editorial use only</td></tr>
+  <tr><td>Contact (email, phone, website)</td><td>How to reach the photographer</td><td>jane@example.com</td></tr>
+</table>
+
+<h2>What it shows</h2>
+<table>
+  <tr><th>Field</th><th>What it's for</th><th>Example</th></tr>
+  <tr><td>Description (Caption)</td><td>The full caption: who, what, where, when</td><td>Marcus Hale of the Riverside Hawks…</td></tr>
+  <tr><td>Keywords</td><td>Searchable words: athletes, teams, brands</td><td>Marcus Hale, Riverside Hawks, football</td></tr>
+  <tr><td>Person Shown</td><td>The people in the photo</td><td>Marcus Hale</td></tr>
+  <tr><td>Headline</td><td>A short summary of the story</td><td>Lakeview at Riverside Football</td></tr>
+  <tr><td>Title (Object Name)</td><td>A short reference name</td><td>FBC Lakeview at Riverside</td></tr>
+  <tr><td>Event</td><td>The game or event</td><td>Lakeview Tigers vs. Riverside Hawks</td></tr>
+</table>
+
+<h2>Where it was taken</h2>
+<table>
+  <tr><th>Field</th><th>Example</th></tr>
+  <tr><td>Sublocation (venue)</td><td>Hawks Stadium</td></tr>
+  <tr><td>City</td><td>Riverside</td></tr>
+  <tr><td>State / Province</td><td>CA</td></tr>
+  <tr><td>Country / Country Code</td><td>United States / USA</td></tr>
+</table>
+
+<h2>Workflow fields editors use</h2>
+<table>
+  <tr><th>Field</th><th>What it's for</th><th>Example</th></tr>
+  <tr><td>Special Instructions</td><td>Restrictions or notes for editors</td><td>NO SALES</td></tr>
+  <tr><td>Job ID (Transmission Reference)</td><td>The assignment or job number</td><td>HAWKS1014</td></tr>
+  <tr><td>Caption Writer</td><td>Initials of whoever wrote the caption</td><td>JS</td></tr>
+  <tr><td>Category / Supplemental Categories</td><td>Wire-service subject codes</td><td>S / FBC, NCAA</td></tr>
+</table>
+
+<h2>Fill it in once with a template</h2>
+<p>Most of these fields are the same for a whole game, so type them once. In Metadata Express, open <strong>Session Setup → IPTC Template…</strong>, fill in what applies, and <strong>Save As…</strong> a named template (e.g. "Hawks Football"). It's written to every photo you tag, or to a whole folder at once with <strong>Apply to All Photos Now</strong>, and can be added automatically while ingesting.</p>
+<ul>
+  <li><strong>Leave a field blank</strong> to keep whatever the photo already has. Metadata Express only changes the fields you fill in and never erases existing metadata or camera data.</li>
+  <li>The caption, keywords and Person Shown come from tagging, so the template doesn't need them.</li>
+  <li>Some older systems cut off long values (for example Byline at 32 characters); the template warns you when a field is over the IPTC limit.</li>
+</ul>
+
+  <h2>Try it</h2>
+  <p>Metadata Express runs on Mac and Windows, with a 5-day free trial. <a href="index.html#download">Download it here</a>. Questions? <a href="contact.html?topic=help">Send us a message</a>.</p>
+  <p>More guides: <a href="guide-ingest-sd-card.html">Ingest from an SD card with a backup</a> · <a href="guide-tag-by-jersey-number.html">Tag photos by jersey number</a> · <a href="guide-send-to-editors.html">Send photos to editors during a game</a> · <a href="roster.html">Make a roster file</a></p>
+</main>
+
+<footer><div class="wrap"><div><a href="guides.html">Guides</a><a href="roster.html">Roster guide</a><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="https://billing.stripe.com/p/login/eVq6oAd263c73NAaw1bV600">Manage subscription</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+<script src="analytics.js" defer></script>
+</body>
+</html>
