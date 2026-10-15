@@ -1,12 +1,12 @@
 # Metadata Express
 
-> Metadata Express is a desktop app for sports photographers (Mac and Windows). It imports photos from SD cards, culls RAW files, tags athletes by typing their jersey number, writes Getty-style captions and full IPTC metadata into the photos, and sends them to editors. 5-day free trial; subscription $9.99/month or $99/year.
+> Metadata Express is a desktop app for sports photographers (Mac and Windows). It imports photos from SD cards, culls RAW files, tags athletes by typing their jersey number, writes Getty-style captions and full IPTC metadata into the photos, and sends them to editors. 14-day free trial; subscription $9.99/month or $99/year.
 
 ## What it does
 
 - Import: plug in an SD card or drive and copy photos to the computer, with folder and file names built from variables ({date}, {event}, {seq}), a backup copy, an IPTC template applied while copying, only-locked-photos (camera protect) filtering, Import automatically, and copying only new photos on repeat imports.
-- Cull: fast RAW culling for Sony, Canon, Nikon and Fujifilm; star ratings and locks from the camera; color labels; favorites and a drives/folders sidebar; drag many photos as one; batch rename with variables.
-- Tag: type a jersey number (or short code) and the athlete's exact name from a roster is written as IPTC/XMP keywords and "Person Shown"; tag both teams; rename files with player names.
+- Cull: fast culling of RAW files from every major camera (Sony, Canon, Nikon, Fujifilm, OM System, Panasonic, Pentax, Leica, Hasselblad, DNG and more) and JPEGs; star ratings and locks from the camera; color labels; favorites and a drives/folders sidebar; drag many photos as one; batch rename with variables.
+- Tag (JPEG or RAW): type a jersey number (or short code) and the athlete's exact name from a roster is written as IPTC/XMP keywords and "Person Shown"; tag both teams; rename files with player names.
 - Caption: Getty-style captions ("Player of the Team during the A vs. B game at Venue on Date"), optional play-by-play suggestions from an official stats PDF.
 - Metadata: full IPTC templates (byline, byline title, credit, source, copyright, usage terms, contact, headline, title, instructions, job ID, categories, location). It only changes the fields you set and keeps existing metadata.
 - Rosters: build from a team roster page link (college athletics sites, ESPN, NFL, NBA.com, NHL.com, MLB.com, MLS) or in the app.
