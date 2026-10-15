@@ -185,3 +185,8 @@ footer a:hover { color: var(--accent); }
 .download .install ol { color: var(--muted); padding-left: 20px; margin: 0 0 8px; font-size: 15.5px; }
 .download .install li { margin: 6px 0; }
 .download .install p { color: var(--faint); font-size: 14px; margin: 0; }
+
+.story .story-card { max-width: 760px; margin: 0 auto; padding: 34px 38px; }
+.story .story-card p { color: var(--text); font-size: 18px; line-height: 1.7; margin: 0 0 16px; }
+.story .sign { margin-top: 22px !important; font-weight: 700; }
+.story .sign span { font-weight: 500; color: var(--muted); font-size: 15px; }
