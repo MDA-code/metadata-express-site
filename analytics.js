@@ -24,7 +24,12 @@
     if (!link) return;
     var href = link.getAttribute("href") || "";
     if (link.dataset.checkout) send({ event: "subscribe_" + link.dataset.checkout });
-    else if (href.indexOf("Metadata-Express.dmg") !== -1) send({ event: "download" });
+    else if (href.indexOf("/releases/latest/download/") !== -1) {
+      // Every installer counts as a download, and which one is kept too.
+      var kind = (href.indexOf(".exe") !== -1 ? "windows" : "mac") + (href.indexOf("NoAI") !== -1 ? "_noai" : "");
+      send({ event: "download" });
+      send({ event: "download_" + kind });
+    }
     else if (href.indexOf("billing.stripe.com") !== -1) send({ event: "manage_subscription" });
   }, true);
 })();

@@ -47,11 +47,11 @@
     <h1>Sports photos, <span>tagged and captioned</span> in seconds.</h1>
     <p class="lead">Import straight from your SD card, cull fast, then type a jersey number and Metadata Express fills in the athlete's name. It writes the keywords and a Getty-style caption into every photo and sends them to your editors or Lightroom.</p>
     <div class="ctas">
-      <a class="btn primary" href="#download">Start your free 14-day trial</a>
-      <a class="btn" href="#pricing">See pricing</a>
+      <a class="btn primary" id="hero-download" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express.dmg">Download for Mac · free 14-day trial</a>
+      <a class="btn" href="#download">Other downloads</a>
     </div>
     <p class="note">Mac &amp; Windows · Your photos never leave your computer · Cancel anytime</p>
-    <div class="shot"><img src="images/tagging.png" alt="Metadata Express tagging screen: a player tagged by jersey number, with the session details and an automatic Getty-style caption" width="1500" height="900"></div>
+    <div class="shot"><picture><source type="image/webp" srcset="images/demo.webp"><img src="images/tagging.png" alt="Metadata Express tagging a game: typing a jersey number adds the athlete's name, and the Getty-style caption fills in automatically" width="1500" height="940"></picture></div>
   </div>
 </section>
 
@@ -246,6 +246,16 @@
   </div>
 </footer>
 
+<script>
+  // The top button downloads for the visitor's computer.
+  (function () {
+    var button = document.getElementById("hero-download");
+    if (button && /Windows/i.test(navigator.userAgent)) {
+      button.href = "https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express-Setup.exe";
+      button.textContent = "Download for Windows · free 14-day trial";
+    }
+  })();
+</script>
 <script src="analytics.js" defer></script>
 </body>
 </html>
