@@ -1,6 +1,6 @@
 # Metadata Express
 
-> Metadata Express is a desktop app for sports photographers (Mac and Windows). It imports photos from SD cards, culls RAW files, tags athletes by typing their jersey number, writes Getty-style captions and full IPTC metadata into the photos, and sends them to editors. 14-day free trial; subscription $9.99/month or $99/year.
+> Metadata Express is a desktop app for creatives: sports photographers, videographers and social teams (Mac and Windows). It imports photos from SD cards, culls RAW files, tags athletes by typing their jersey number, writes Getty-style captions and full IPTC metadata into the photos, and sends them to editors. 14-day free trial; subscription $9.99/month or $99/year.
 
 ## What it does
 
