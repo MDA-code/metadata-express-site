@@ -190,3 +190,7 @@ footer a:hover { color: var(--accent); }
 .story .story-card p { color: var(--text); font-size: 18px; line-height: 1.7; margin: 0 0 16px; }
 .story .sign { margin-top: 22px !important; font-weight: 700; }
 .story .sign span { font-weight: 500; color: var(--muted); font-size: 15px; }
+
+/* Label Clips (video) */
+.video { border-top: 1px solid var(--card-border); }
+.video .row { margin: 36px 0 40px; }
