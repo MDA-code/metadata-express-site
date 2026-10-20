@@ -22,6 +22,7 @@
 - How to import photos from an SD card with an automatic backup: https://metadataexpress.com/guide-ingest-sd-card.html
 - IPTC metadata for sports photographers: what each field means: https://metadataexpress.com/guide-iptc-metadata.html
 - How to tag sports photos by jersey number: https://metadataexpress.com/guide-tag-by-jersey-number.html
+- How to label sports video clips and send your best ones to Premiere, Final Cut or Resolve: https://metadataexpress.com/guide-video-selects.html
 - How to send photos to editors during a game: https://metadataexpress.com/guide-send-to-editors.html
 - Roster guide: https://metadataexpress.com/roster.html
 - Contact: https://metadataexpress.com/contact.html (support@metadataexpress.com; ideas to suggestions@metadataexpress.com)
