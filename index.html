@@ -45,13 +45,13 @@
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">Built for creatives</span>
-    <h1>Sports photos, <span>tagged and captioned</span> in seconds.</h1>
-    <p class="lead">Import straight from your SD card, cull fast, then type a jersey number and Metadata Express fills in the athlete's name. It writes the keywords and a Getty-style caption into every photo and sends them to your editors or Lightroom. Shooting video too? Label your clips as you watch them.</p>
+    <h1>Photos and clips, <span>tagged and named</span> in seconds.</h1>
+    <p class="lead">Type a jersey number and Metadata Express fills in the athlete's name: keywords and a Getty-style caption in every photo, and a clear name on every video clip as you watch it. Import straight from your SD card, cull fast, then send it all to your editors or Lightroom.</p>
     <div class="ctas">
-      <a class="btn primary" id="hero-download" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express.dmg">Download for Mac · free 14-day trial</a>
-      <a class="btn" href="#download">Other downloads</a>
+      <a class="btn primary" id="hero-mac" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express.dmg">Download for Mac</a>
+      <a class="btn" id="hero-windows" href="https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express-Setup.exe">Download for Windows</a>
     </div>
-    <p class="note">Mac &amp; Windows · Photos and video · Your files never leave your computer · Cancel anytime</p>
+    <p class="note">Free 14-day trial · Cancel anytime · Your files never leave your computer · <a href="#download">No AI versions</a></p>
     <div class="shot"><picture><source type="image/webp" srcset="images/demo.webp"><img src="images/tagging.png" alt="Metadata Express tagging a game: typing a jersey number adds the athlete's name, and the Getty-style caption fills in automatically" width="1500" height="940"></picture></div>
   </div>
 </section>
@@ -271,12 +271,14 @@
 </footer>
 
 <script>
-  // The top button downloads for the visitor's computer.
+  // Both downloads at the top; the visitor's own computer gets the
+  // purple button, first.
   (function () {
-    var button = document.getElementById("hero-download");
-    if (button && /Windows/i.test(navigator.userAgent)) {
-      button.href = "https://github.com/MDA-code/metadata-express/releases/latest/download/Metadata-Express-Setup.exe";
-      button.textContent = "Download for Windows · free 14-day trial";
+    var mac = document.getElementById("hero-mac"), windows = document.getElementById("hero-windows");
+    if (mac && windows && /Windows/i.test(navigator.userAgent)) {
+      windows.classList.add("primary");
+      mac.classList.remove("primary");
+      windows.parentNode.insertBefore(windows, mac);
     }
   })();
 </script>
