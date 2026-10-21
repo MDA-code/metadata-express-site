@@ -197,3 +197,5 @@ footer a:hover { color: var(--accent); }
 
 .beta { display: inline-block; vertical-align: middle; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 10px; margin-left: 8px; }
 .beta.small { font-size: 10px; padding: 2px 6px; margin-left: 4px; }
+
+.video .grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); max-width: 900px; margin: 0 auto; }
