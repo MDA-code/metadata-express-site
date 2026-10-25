@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Educational Discount · Metadata Express</title>
+  <meta name="description" content="High school and college students can get Metadata Express at a discount. Apply with your school email.">
+  <link rel="icon" href="images/icon.png">
+  <link rel="canonical" href="https://metadataexpress.com/education.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Metadata Express">
+  <meta property="og:url" content="https://metadataexpress.com/education.html">
+  <meta property="og:title" content="Educational Discount · Metadata Express">
+  <meta property="og:description" content="High school and college students can get Metadata Express at a discount. Apply with your school email.">
+  <meta property="og:image" content="https://metadataexpress.com/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://metadataexpress.com/images/og.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#download">Downloads</a><a class="hide-sm" href="index.html#pricing">Pricing</a><a class="btn primary small" href="index.html#download">Free trial</a></nav></div></header>
+
+<main class="legal">
+  <h1>Educational discount</h1>
+  <p class="updated">High school and college students can get Metadata Express at a <strong>student price</strong>. Apply with your school email and we'll send you a discount code.</p>
+
+  <div class="card edu-steps">
+    <h3>How it works</h3>
+    <ol>
+      <li><strong>Apply below</strong> with your school email address.</li>
+      <li><strong>We email you a discount code</strong> within 24 hours.</li>
+      <li><strong>Subscribe</strong> from the <a href="index.html#pricing">pricing</a> section and enter your code at checkout (“Add promotion code”).</li>
+    </ol>
+    <p class="fine">Not sure yet? <a href="index.html#download">Try it free for 14 days</a> first; no card needed.</p>
+  </div>
+
+  <form id="edu" class="card form" novalidate>
+    <div class="two">
+      <label>Your name <span class="req">*</span>
+        <input name="name" type="text" autocomplete="name" required maxlength="120">
+      </label>
+      <label>School email <span class="req">*</span>
+        <input name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@school.edu">
+      </label>
+    </div>
+
+    <label>School <span class="req">*</span>
+      <input name="school" type="text" required maxlength="160" placeholder="School or university name">
+    </label>
+
+    <label>Anything else?
+      <textarea name="message" rows="3" maxlength="2000" placeholder="Optional: the team or school media you shoot for, or a question"></textarea>
+    </label>
+
+    <!-- Spam trap: people never see or fill this. -->
+    <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off">
+
+    <button class="btn primary" type="submit">Apply for the discount</button>
+    <p id="status" class="form-status" role="status" aria-live="polite"></p>
+    <p class="fine">Use the email your school gave you, so we can confirm you're a student. We use your details only to send your code. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  </form>
+</main>
+
+
+<footer><div class="wrap"><div><a href="guides.html">Guides</a><a href="roster.html">Roster guide</a><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="https://billing.stripe.com/p/login/eVq6oAd263c73NAaw1bV600">Manage subscription</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+
+<script>
+  // Web3Forms delivers each application by email (same as Contact).
+  const ACCESS_KEY = "79ffad07-7e5d-47f5-923e-3be423cd53a9";
+
+  const form = document.getElementById("edu");
+  const status = document.getElementById("status");
+  const button = form.querySelector("button");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if (data.botcheck) return;
+    if (!data.name.trim()) { status.textContent = "Please enter your name."; return; }
+    if (!form.email.checkValidity() || !data.email.trim()) { status.textContent = "Please enter your school email."; return; }
+    if (!data.school.trim()) { status.textContent = "Please enter your school."; return; }
+
+    button.disabled = true;
+    status.textContent = "Sending…";
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: "Metadata Express: Educational discount request from " + data.name,
+          from_name: "Metadata Express website",
+          topic: "Educational discount",
+          name: data.name,
+          email: data.email,
+          school: data.school,
+          message: data.message || "(none)",
+          botcheck: false,
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message || "Something went wrong");
+      form.reset();
+      status.textContent = "Thanks! Your application was sent. We'll email your discount code to " + data.email + " within 24 hours.";
+      if (window.mxTrack) window.mxTrack("contact_education");
+    } catch (error) {
+      status.textContent = "Sorry, that didn't send. Please check your connection and try again.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
+<script src="analytics.js" defer></script>
+</body>
+</html>
