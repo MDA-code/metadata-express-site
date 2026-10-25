@@ -65,7 +65,14 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text); text-decoration: none; font-size: 18px; letter-spacing: -0.01em; }
 .brand img { width: 32px; height: 32px; border-radius: 9px; }
 nav.links { display: flex; gap: 22px; align-items: center; }
-nav.links a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; }
+nav.links a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; white-space: nowrap; }
+.brand { white-space: nowrap; flex-shrink: 0; }
+/* A full menu (the home page) makes room on narrower windows: tighter
+   first, then the tabs people use least step aside (still on the page
+   and in the footer). */
+@media (max-width: 1320px) { nav.links { gap: 16px; } nav.links a { font-size: 14px; } }
+@media (max-width: 1220px) { nav.links a.hide-md { display: none; } }
+@media (max-width: 980px) { nav.links a.hide-lg { display: none; } }
 nav.links a:hover { color: var(--accent); }
 @media (max-width: 720px) { nav.links a.hide-sm { display: none; } }
 
@@ -204,3 +211,8 @@ footer a:hover { color: var(--accent); }
 .edu-steps { margin: 0 0 24px; }
 .edu-steps h3 { margin-top: 0; }
 .edu-steps ol { margin: 8px 0 12px; padding-left: 22px; line-height: 1.7; }
+
+/* Educational discount note under the pricing heading */
+.edu-note { text-align: center; margin: -6px 0 26px; }
+.edu-note a { display: inline-block; padding: 9px 18px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; text-decoration: none; }
+.edu-note a:hover { background: var(--accent); color: #ffffff; }
