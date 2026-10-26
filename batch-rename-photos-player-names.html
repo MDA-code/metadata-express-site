@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Batch Rename Photos with Player Names | Metadata Express</title>
+  <meta name="description" content="Rename sports photos with the players in them as you tag: keep the original name, add the date, your initials and the game. RAW, JPEG and sidecar keep one name.">
+  <link rel="icon" href="images/icon.png">
+  <link rel="canonical" href="https://metadataexpress.com/batch-rename-photos-player-names.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Metadata Express">
+  <meta property="og:url" content="https://metadataexpress.com/batch-rename-photos-player-names.html">
+  <meta property="og:title" content="Batch rename photos with player names">
+  <meta property="og:description" content="Rename sports photos with the players in them as you tag: keep the original name, add the date, your initials and the game. RAW, JPEG and sidecar keep one name.">
+  <meta property="og:image" content="https://metadataexpress.com/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://metadataexpress.com/images/og.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal pre { background: var(--card); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px 18px; overflow-x: auto; font-size: 15px; line-height: 1.7; color: var(--text); }
+    .legal code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .legal p code, .legal li code, .legal td code { background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+    .legal table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 16px; }
+    .legal th, .legal td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--card-border); color: var(--muted); vertical-align: top; }
+    .legal th { color: var(--text); font-size: 14px; }
+    .legal ol li, .legal ul li { margin: 6px 0; }
+    .downloads { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 6px; }
+    .tip { border-left: 3px solid var(--accent); }
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Batch rename photos with player names", "description": "Rename sports photos with the players in them as you tag: keep the original name, add the date, your initials and the game. RAW, JPEG and sidecar keep one name.", "url": "https://metadataexpress.com/batch-rename-photos-player-names.html", "image": "https://metadataexpress.com/images/og.png", "author": {"@type": "Organization", "name": "Metadata Express"}, "publisher": {"@type": "Organization", "name": "Metadata Express", "logo": {"@type": "ImageObject", "url": "https://metadataexpress.com/images/icon.png"}}, "datePublished": "2026-10-25"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I keep the original file name?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Start the name with {original} (or tick “Keep the photo's original name”), and the camera's name stays at the front, followed by anything else you add."}}, {"@type": "Question", "name": "What happens to RAW and JPEG pairs?", "acceptedAnswer": {"@type": "Answer", "text": "They're renamed together, along with the .xmp sidecar, so a RAW, its JPEG and its metadata always match."}}, {"@type": "Question", "name": "What if two photos would get the same name?", "acceptedAnswer": {"@type": "Answer", "text": "The second one gets _2 (or the next number), so nothing is ever overwritten."}}, {"@type": "Question", "name": "Can I undo a rename?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rename All and Cull's Rename both offer Undo, which puts every file back the way it was."}}, {"@type": "Question", "name": "Does it also work for video clips?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Label Clips has the same Name Format for video, so photos and clips can follow one convention. See <a href=\"label-sports-video-clips.html\">labeling video clips</a>."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="brand" href="index.html"><img src="images/icon.png" alt="">Metadata Express</a><nav class="links"><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#download">Downloads</a><a class="hide-sm" href="index.html#pricing">Pricing</a><a class="hide-sm" href="education.html">Educational Discount</a><a class="btn primary small" href="index.html#download">Free trial</a></nav></div></header>
+
+<main class="legal">
+  <p class="updated"><a href="guides.html">Guides</a></p>
+  <h1>Batch rename photos with player names</h1>
+  <p class="updated">Name every photo after the athletes in it, in your office's format, without a separate batch-rename step.</p>
+<p>A file called <code>DSC00001.JPG</code> tells an editor nothing. <code>DSC00001_031426_JS_Marcus_Hale.jpg</code> tells them who, when and who shot it. Metadata Express names photos as you tag them, so there's no extra trip to a batch-rename tool afterwards.</p>
+
+<h2>Two ways to set it up</h2>
+<ol>
+  <li><strong>Quick styles</strong>: in Session Setup, turn on <em>Rename photos with player names when saving</em> and pick a style: <code>MarcusHale1</code>, <code>Hale_Marcus_1</code>, <code>HALE_1</code> and more. Numbers keep counting so names never clash.</li>
+  <li><strong>Your own Name Format</strong>: choose <em>Custom</em> (or the Name Format button while tagging) and build the name from pieces: the original file name, the date taken, your initials, the game, a photo number and the players. Or type the pattern exactly as you want it:
+<pre><code>{original}_{date}_JS_{players}   →   DSC00001_031426_JS_Marcus_Hale.jpg</code></pre></li>
+</ol>
+
+<h2>What gets renamed</h2>
+<ul>
+  <li><strong>Every file of a photo, together</strong>: the RAW, its JPEG partner and its .xmp sidecar always keep one name, so nothing gets separated.</li>
+  <li><strong>Several players</strong> are all included (<code>Marcus_Hale_Devin_Brooks</code>), written the way you choose.</li>
+  <li><strong>Already tagged a game?</strong> <em>Rename All Tagged Photos Now</em> applies your format to every photo you've tagged, with Undo.</li>
+  <li><strong>Before tagging</strong>, Cull's Rename names a whole card at once with variables like date, event, camera and a sequence number, also with Undo.</li>
+</ul>
+<p>Your tags and captions stay inside the files, so renaming never loses anything.</p>
+
+
+<h2>Questions</h2>
+<h3>Can I keep the original file name?</h3>
+<p>Yes. Start the name with {original} (or tick “Keep the photo's original name”), and the camera's name stays at the front, followed by anything else you add.</p>
+<h3>What happens to RAW and JPEG pairs?</h3>
+<p>They're renamed together, along with the .xmp sidecar, so a RAW, its JPEG and its metadata always match.</p>
+<h3>What if two photos would get the same name?</h3>
+<p>The second one gets _2 (or the next number), so nothing is ever overwritten.</p>
+<h3>Can I undo a rename?</h3>
+<p>Yes. Rename All and Cull's Rename both offer Undo, which puts every file back the way it was.</p>
+<h3>Does it also work for video clips?</h3>
+<p>Yes. Label Clips has the same Name Format for video, so photos and clips can follow one convention. See <a href="label-sports-video-clips.html">labeling video clips</a>.</p>
+
+  <h2>Try it free</h2>
+  <p>Metadata Express runs on Mac and Windows. Every feature is free for 14 days, no card needed. <a href="index.html#download">Download it here</a>. Questions? <a href="contact.html?topic=help">Send us a message</a>.</p>
+  <div class="downloads"><a class="btn primary" href="index.html#download">Download the free trial</a><a class="btn" href="index.html#pricing">See pricing</a></div>
+  <p>More guides: <a href="sports-photo-captioning-software.html">Sports photo captioning</a> · <a href="label-sports-video-clips.html">Label video clips by player</a> · <a href="batch-rename-photos-player-names.html">Rename photos with player names</a> · <a href="guide-tag-by-jersey-number.html">Tag by jersey number</a> · <a href="guide-iptc-metadata.html">IPTC metadata explained</a></p>
+</main>
+
+<footer><div class="wrap"><div><a href="guides.html">Guides</a><a href="roster.html">Roster guide</a><a href="contact.html?topic=suggestion">Suggest a feature</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refunds.html">Refunds</a><a href="https://billing.stripe.com/p/login/eVq6oAd263c73NAaw1bV600">Manage subscription</a><a href="contact.html">Contact</a></div><div>© 2026 Metadata Express</div></div></footer>
+<script src="analytics.js" defer></script>
+</body>
+</html>

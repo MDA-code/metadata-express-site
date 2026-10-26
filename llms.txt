@@ -19,6 +19,9 @@
 
 - Website and download: https://metadataexpress.com/
 - Guides: https://metadataexpress.com/guides.html
+- Sports photo captioning software: https://metadataexpress.com/sports-photo-captioning-software.html
+- Label sports video clips by player: https://metadataexpress.com/label-sports-video-clips.html
+- Batch rename photos with player names: https://metadataexpress.com/batch-rename-photos-player-names.html
 - How to import photos from an SD card with an automatic backup: https://metadataexpress.com/guide-ingest-sd-card.html
 - IPTC metadata for sports photographers: what each field means: https://metadataexpress.com/guide-iptc-metadata.html
 - How to tag sports photos by jersey number: https://metadataexpress.com/guide-tag-by-jersey-number.html
