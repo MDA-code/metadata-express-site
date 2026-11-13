@@ -214,3 +214,33 @@ footer a:hover { color: var(--accent); }
 .edu-note { text-align: center; margin: -6px 0 26px; }
 .edu-note a { display: inline-block; padding: 9px 18px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; text-decoration: none; }
 .edu-note a:hover { background: var(--accent); color: #ffffff; }
+
+/* Quotes from people using the app */
+.quotes { padding: 36px 0 8px; }
+.quotes h2 { font-size: clamp(22px, 3vw, 28px); margin-bottom: 26px; }
+.quote-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 900px; margin: 0 auto; }
+.quote { margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.quote blockquote { margin: 0; font-size: 19px; line-height: 1.5; color: var(--text); font-weight: 600; letter-spacing: -0.01em; }
+.quote blockquote::before { content: "“"; color: var(--accent); }
+.quote blockquote::after { content: "”"; color: var(--accent); }
+.quote figcaption { color: var(--faint); font-size: 14.5px; font-weight: 600; }
+
+/* The rest of the feature cards, behind More features */
+details.more-features { background: none; border: none; padding: 0; margin: 18px 0 0; border-radius: 0; }
+details.more-features > summary { justify-content: center; width: max-content; margin: 0 auto; padding: 11px 22px; border-radius: 999px; background: var(--card); border: 1px solid var(--card-border); font-size: 15.5px; }
+details.more-features[open] > summary { margin-bottom: 18px; }
+details.more-features .card p { margin: 0; }
+
+/* On a phone: send the link to a computer instead of downloading */
+.phone-cta { max-width: 520px; margin: 0 auto; }
+.phone-cta p { color: var(--muted); font-size: 16px; margin: 0 0 14px; }
+.phone-cta button.btn { font: inherit; font-weight: 700; cursor: pointer; }
+
+/* Click a screenshot to see it large */
+picture img.zoomable { cursor: zoom-in; }
+.zoom-view { position: fixed; inset: 0; z-index: 50; background: rgba(8, 8, 14, .92); overflow: auto; -webkit-overflow-scrolling: touch; cursor: zoom-out; padding: 16px; display: flex; }
+.zoom-view img { margin: auto; max-width: none; width: min(1500px, max(100%, 1100px)); border-radius: 12px; }
+.zoom-view .zoom-close { position: fixed; top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 50%; border: none; background: rgba(255, 255, 255, .16); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; }
+.zoom-hint { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); color: #fff; background: rgba(0, 0, 0, .55); padding: 6px 14px; border-radius: 999px; font-size: 13px; pointer-events: none; }
+
+[hidden] { display: none !important; }
